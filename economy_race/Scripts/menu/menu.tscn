@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmnhnnlbv7o1s"]
+
+[ext_resource type="Script" path="res://Scripts/menu/menu.gd" id="1_b42k7"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_b42k7")
+
+[node name="play" type="Button" parent="."]
+offset_left = 209.0
+offset_top = 144.0
+offset_right = 349.0
+offset_bottom = 191.0
+text = "PLAY"
+
+[node name="menu" type="Button" parent="."]
+offset_left = 375.0
+offset_top = 144.0
+offset_right = 515.0
+offset_bottom = 191.0
+text = "MENU"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 40.0
+offset_top = 144.0
+offset_right = 180.0
+offset_bottom = 191.0
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
