@@ -5,25 +5,26 @@
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_b42k7")
 
-[node name="play" type="Button" parent="."]
-offset_left = 209.0
-offset_top = 144.0
-offset_right = 349.0
-offset_bottom = 191.0
-text = "PLAY"
+[node name="skins" type="Button" parent="."]
+offset_left = 399.0
+offset_top = 147.0
+offset_right = 539.0
+offset_bottom = 194.0
+text = "SKINS"
 
 [node name="menu" type="Button" parent="."]
-offset_left = 375.0
-offset_top = 144.0
-offset_right = 515.0
-offset_bottom = 191.0
-text = "MENU"
+offset_left = 220.0
+offset_top = 142.0
+offset_right = 360.0
+offset_bottom = 189.0
+text = "PLAY"
 
-[node name="Button3" type="Button" parent="."]
+[node name="info" type="Button" parent="."]
 offset_left = 40.0
 offset_top = 144.0
 offset_right = 180.0
 offset_bottom = 191.0
+text = "INFO"
 
-[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="skins" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
