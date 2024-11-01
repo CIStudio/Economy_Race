@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cdn4an1y4inxr" path="res://Scenes/tilemaps/builder.tscn" id="1_cwnwx"]
 [ext_resource type="PackedScene" uid="uid://bbxpuc56cquka" path="res://Scenes/player/player.tscn" id="1_gqgmq"]
 [ext_resource type="PackedScene" uid="uid://dk5hlh34tw337" path="res://Scenes/tilemaps/interios.tscn" id="2_tqagc"]
-[ext_resource type="PackedScene" uid="uid://1upygucshcag" path="res://Scenes/Electronic Devices/lamp.tscn" id="4_1j3ba"]
+[ext_resource type="PackedScene" uid="uid://cdyy27nnuqs82" path="res://Scenes/Devices/lamp.tscn" id="4_bm1dx"]
 
 [node name="level_1" type="Node2D"]
 
@@ -17,5 +17,5 @@ tile_map_data = PackedByteArray("AAATABIAAAAHAEgAAAATABMAAAAHAEkAAAAUABIAAAAIAEg
 [node name="player" parent="." instance=ExtResource("1_gqgmq")]
 position = Vector2(373, 374)
 
-[node name="lamp" parent="." instance=ExtResource("4_1j3ba")]
-position = Vector2(288, 375)
+[node name="lamp" parent="." instance=ExtResource("4_bm1dx")]
+position = Vector2(273, 381)
