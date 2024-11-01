@@ -7,7 +7,7 @@ const SPEED = 100.0
 @onready var ANIM = $AnimatedSprite2D
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("right"):
@@ -26,6 +26,8 @@ func _physics_process(delta: float) -> void:
 		ANIM.play("front_idle")
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * SPEED
-
-
+	
+	if Input.is_action_just_pressed("off"):
+		Global.is_off = true
+		
 	move_and_slide()

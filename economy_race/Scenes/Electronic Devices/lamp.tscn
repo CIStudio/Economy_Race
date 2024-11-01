@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://1upygucshcag"]
+
+[ext_resource type="Texture2D" uid="uid://bhk1fi60u66t0" path="res://Files/Modern tiles_Free/Interiors_free/32x32/Interiors_free_32x32.png" id="1_0ukd6"]
+[ext_resource type="Script" path="res://Scripts/devices/lamp.gd" id="1_tx8o0"]
+[ext_resource type="Texture2D" uid="uid://qd20fyiajlp0" path="res://Files/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="3_mlcui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmf6f"]
+atlas = ExtResource("1_0ukd6")
+region = Rect2(480, 1638, 32, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6kjy"]
+atlas = ExtResource("3_mlcui")
+region = Rect2(224, 816, 16, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qrbjr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmf6f")
+}],
+"loop": true,
+"name": &"lamp_of",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6kjy")
+}],
+"loop": true,
+"name": &"lamp_on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bt0o"]
+size = Vector2(25, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2pju"]
+size = Vector2(37, 44)
+
+[node name="lamp" type="CharacterBody2D"]
+script = ExtResource("1_tx8o0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qrbjr")
+animation = &"lamp_of"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_6bt0o")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_s2pju")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
