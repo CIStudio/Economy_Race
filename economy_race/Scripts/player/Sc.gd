@@ -27,7 +27,5 @@ func _physics_process(_delta: float) -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * SPEED
 	
-	if Input.is_action_just_pressed("off"):
-		Global.is_off = true
 		
 	move_and_slide()
