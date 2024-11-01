@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if in_object_area == true and Input.is_action_just_pressed("take"):
+		$"../AnimatedSprite2D".play("off")
 		ANIM = "off"
 		print("2")
 
@@ -21,6 +22,4 @@ func _on_body_entered(body: Node2D) -> void:
 	else:
 		in_object_area = false
 		
-	if ANIM == "off":
-		body.anim_off()
 		

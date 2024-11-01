@@ -45,7 +45,7 @@ script = ExtResource("1_wgl27")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_e84ex")
-animation = &"on"
+animation = &"off"
 autoplay = "on"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
