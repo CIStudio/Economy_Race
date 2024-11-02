@@ -1,13 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdyy27nnuqs82"]
+[gd_scene load_steps=9 format=3 uid="uid://cdyy27nnuqs82"]
 
-[ext_resource type="Texture2D" uid="uid://b5ipwtioh3sv0" path="res://Files/Modern tiles_Free/Old/idle_32x32_2.png" id="1_7akrf"]
-[ext_resource type="Script" path="res://Scenes/Devices/lamp.gd" id="1_wgl27"]
+[ext_resource type="Script" path="res://Scenes/devices/lamp.gd" id="1_wgl27"]
+[ext_resource type="Texture2D" uid="uid://s6o7okk28vnm" path="res://Files/stiralka.png" id="2_8mtob"]
 [ext_resource type="Texture2D" uid="uid://crqa2520ygu6k" path="res://Files/Modern tiles_Free/Old/idle_16x16_2.png" id="2_u3ybj"]
-[ext_resource type="Script" path="res://Scenes/Devices/area_2d.gd" id="3_uvr8u"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sfjxq"]
-atlas = ExtResource("1_7akrf")
-region = Rect2(96, 0, 32, 64)
+[ext_resource type="Script" path="res://Scenes/devices/area_2d.gd" id="3_uvr8u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2rs6u"]
 atlas = ExtResource("2_u3ybj")
@@ -17,7 +13,7 @@ region = Rect2(16, 0, 16, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sfjxq")
+"texture": ExtResource("2_8mtob")
 }],
 "loop": true,
 "name": &"off",
@@ -43,7 +39,8 @@ size = Vector2(54, 44)
 script = ExtResource("1_wgl27")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(-1, -10)
+scale = Vector2(0.0955, 0.08)
 sprite_frames = SubResource("SpriteFrames_e84ex")
 animation = &"off"
 autoplay = "on"
