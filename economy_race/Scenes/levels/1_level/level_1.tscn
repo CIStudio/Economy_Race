@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=4 uid="uid://2iqh1l5uvg27"]
+[gd_scene load_steps=7 format=4 uid="uid://2iqh1l5uvg27"]
 
 [ext_resource type="PackedScene" uid="uid://cdn4an1y4inxr" path="res://Scenes/tilemaps/builder.tscn" id="1_cwnwx"]
 [ext_resource type="PackedScene" uid="uid://bbxpuc56cquka" path="res://Scenes/player/player.tscn" id="1_gqgmq"]
+[ext_resource type="Script" path="res://Scripts/levels/Level_1/meneger.gd" id="1_ou3kj"]
 [ext_resource type="PackedScene" uid="uid://dk5hlh34tw337" path="res://Scenes/tilemaps/interios.tscn" id="2_tqagc"]
-[ext_resource type="PackedScene" uid="uid://cdyy27nnuqs82" path="res://Scenes/devices/lamp.tscn" id="4_bm1dx"]
+[ext_resource type="PackedScene" uid="uid://cdyy27nnuqs82" path="res://Scenes/Devices/lamp.tscn" id="4_bm1dx"]
+[ext_resource type="PackedScene" uid="uid://nxqayiltfvl4" path="res://Scenes/UI/pause_menu.tscn" id="6_xnenn"]
 
 [node name="level_1" type="Node2D"]
+
+[node name="Meneger" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("1_ou3kj")
 
 [node name="Builder" parent="." instance=ExtResource("1_cwnwx")]
 position = Vector2(72, 54)
@@ -19,3 +25,14 @@ position = Vector2(373, 374)
 
 [node name="lamp" parent="." instance=ExtResource("4_bm1dx")]
 position = Vector2(273, 381)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause menu" parent="CanvasLayer" instance=ExtResource("6_xnenn")]
+process_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Resume" to="Meneger" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Reset" to="Meneger" method="_on_reset_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Quit" to="Meneger" method="_on_quit_pressed"]
+
+[editable path="CanvasLayer/Pause menu"]

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://nxqayiltfvl4"]
+
+[node name="Pause menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -99.0
+offset_top = -135.0
+offset_right = 99.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.529
+anchor_bottom = 0.521
+offset_left = -65.0
+offset_top = -44.0
+offset_right = 61.258
+offset_bottom = 64.33
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Reset"
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 29.0
+offset_right = 161.0
+offset_bottom = 56.0
+text = "Menu"
+horizontal_alignment = 1
