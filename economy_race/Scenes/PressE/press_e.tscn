@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b002j15df3x4x"]
+
+[ext_resource type="Texture2D" uid="uid://ch4aht47lyjf" path="res://Files/Devises/Press_E/press.png" id="1_vwyg1"]
+
+[node name="PressE" type="Sprite2D"]
+position = Vector2(2.99988, -76)
+scale = Vector2(0.326823, 0.404297)
+texture = ExtResource("1_vwyg1")

@@ -1,19 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://cdyy27nnuqs82"]
+[gd_scene load_steps=12 format=3 uid="uid://cdyy27nnuqs82"]
 
 [ext_resource type="Script" path="res://Scenes/devices/lamp.gd" id="1_wgl27"]
-[ext_resource type="Texture2D" uid="uid://s6o7okk28vnm" path="res://Files/stiralka.png" id="2_8mtob"]
-[ext_resource type="Texture2D" uid="uid://crqa2520ygu6k" path="res://Files/Modern tiles_Free/Old/idle_16x16_2.png" id="2_u3ybj"]
+[ext_resource type="Texture2D" uid="uid://c1lnpuflijlwv" path="res://Files/Devises/Stiralka/Off/Off.png" id="2_fv4d4"]
+[ext_resource type="Texture2D" uid="uid://bqgm74q1m1fkl" path="res://Files/Devises/Stiralka/On/1.png" id="3_eccsd"]
 [ext_resource type="Script" path="res://Scenes/devices/area_2d.gd" id="3_uvr8u"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2rs6u"]
-atlas = ExtResource("2_u3ybj")
-region = Rect2(16, 0, 16, 32)
+[ext_resource type="Texture2D" uid="uid://ejmufst5df1k" path="res://Files/Devises/Stiralka/On/2.png" id="4_frv83"]
+[ext_resource type="Texture2D" uid="uid://c2v4hu1bmicxx" path="res://Files/Devises/Stiralka/On/3.png" id="5_3q1n3"]
+[ext_resource type="Texture2D" uid="uid://bbm6tkmk232d6" path="res://Files/Devises/Stiralka/On/4.png" id="6_v7qll"]
+[ext_resource type="PackedScene" uid="uid://b002j15df3x4x" path="res://Scenes/PressE/press_e.tscn" id="8_xvv00"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e84ex"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8mtob")
+"texture": ExtResource("2_fv4d4")
 }],
 "loop": true,
 "name": &"off",
@@ -21,16 +21,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2rs6u")
+"texture": ExtResource("3_eccsd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_frv83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3q1n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_v7qll")
 }],
 "loop": true,
 "name": &"on",
-"speed": 5.0
+"speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ynjgc"]
-radius = 6.0
-height = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1tex"]
+size = Vector2(24, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxtdd"]
 size = Vector2(54, 44)
@@ -39,23 +47,28 @@ size = Vector2(54, 44)
 script = ExtResource("1_wgl27")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -10)
-scale = Vector2(0.0955, 0.08)
+position = Vector2(-4.76837e-07, -14)
+scale = Vector2(0.0641434, 0.0567364)
 sprite_frames = SubResource("SpriteFrames_e84ex")
-animation = &"off"
+animation = &"on"
 autoplay = "on"
+frame_progress = 0.591751
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -10)
-shape = SubResource("CapsuleShape2D_ynjgc")
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_t1tex")
 
 [node name="Area2D" type="Area2D" parent="."]
 process_mode = 1
 script = ExtResource("3_uvr8u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, -10)
+position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_pxtdd")
 debug_color = Color(0.676576, 0.505711, 1.15514e-06, 0.42)
+
+[node name="PressE" parent="." instance=ExtResource("8_xvv00")]
+position = Vector2(-1.19209e-06, -32.4375)
+scale = Vector2(0.015625, 0.0217285)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

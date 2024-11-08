@@ -24,7 +24,7 @@ tile_map_data = PackedByteArray("AAATABIAAAAHAEgAAAATABMAAAAHAEkAAAAUABIAAAAIAEg
 position = Vector2(373, 374)
 
 [node name="lamp" parent="." instance=ExtResource("4_bm1dx")]
-position = Vector2(273, 381)
+position = Vector2(255, 352)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
