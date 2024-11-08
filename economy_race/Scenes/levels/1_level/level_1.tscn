@@ -32,7 +32,7 @@ position = Vector2(273, 381)
 process_mode = 2
 
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Resume" to="Meneger" method="_on_resume_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Reset" to="Meneger" method="_on_reset_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Restart" to="Meneger" method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Quit" to="Meneger" method="_on_quit_pressed"]
 
 [editable path="CanvasLayer/Pause menu"]
