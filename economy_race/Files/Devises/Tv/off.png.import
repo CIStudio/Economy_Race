@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rm63l8vg17s6"
-path="res://.godot/imported/4.png-cf0fbd87130207100673149a71c3b947.ctex"
+uid="uid://dfunetygugmti"
+path="res://.godot/imported/off.png-a3b9aa0f3e7808f3b0d5ac2b39a26683.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Files/Devises/Hol/on/4.png"
-dest_files=["res://.godot/imported/4.png-cf0fbd87130207100673149a71c3b947.ctex"]
+source_file="res://Files/Devises/Tv/off.png"
+dest_files=["res://.godot/imported/off.png-a3b9aa0f3e7808f3b0d5ac2b39a26683.ctex"]
 
 [params]
 

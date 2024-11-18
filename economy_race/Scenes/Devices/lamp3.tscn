@@ -1,14 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bsfn1cgxg50fn"]
+[gd_scene load_steps=11 format=3 uid="uid://bsfn1cgxg50fn"]
 
 [ext_resource type="Script" path="res://Scenes/devices/lamp.gd" id="1_omw8g"]
 [ext_resource type="Texture2D" uid="uid://dghuq5ucatgvk" path="res://Files/Devises/Hol/off.png" id="2_x0f2s"]
-[ext_resource type="Texture2D" uid="uid://ct3k8jdati1mf" path="res://Files/Devises/Hol/on/1.png" id="3_4fd0v"]
-[ext_resource type="Texture2D" uid="uid://djj2p6ydjv4uv" path="res://Files/Devises/Hol/on/2.png" id="4_4uuss"]
-[ext_resource type="Texture2D" uid="uid://8xwy5duwupwn" path="res://Files/Devises/Hol/on/3.png" id="5_ashmn"]
-[ext_resource type="Texture2D" uid="uid://rm63l8vg17s6" path="res://Files/Devises/Hol/on/4.png" id="6_y32yv"]
+[ext_resource type="Texture2D" uid="uid://bmvhwsv3ap3hu" path="res://Files/Devises/Hol/on/1.png" id="3_4fd0v"]
+[ext_resource type="Texture2D" uid="uid://bby86u1b7da0m" path="res://Files/Devises/Hol/on/2.png" id="4_4uuss"]
+[ext_resource type="Texture2D" uid="uid://d30pbpwtysr0v" path="res://Files/Devises/Hol/on/3.png" id="5_ashmn"]
 [ext_resource type="Script" path="res://Scenes/devices/area_2d.gd" id="7_btudi"]
-[ext_resource type="Texture2D" uid="uid://pao6204l7i37" path="res://Files/Devises/Hol/on/5.png" id="7_pjmps"]
-[ext_resource type="Texture2D" uid="uid://cfs0l8uwsbcax" path="res://Files/Devises/Hol/on/6.png" id="8_ihpiq"]
 [ext_resource type="PackedScene" uid="uid://b002j15df3x4x" path="res://Scenes/PressE/press_e.tscn" id="8_wmami"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e84ex"]
@@ -30,19 +27,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("5_ashmn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_y32yv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_pjmps")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_ihpiq")
 }],
 "loop": true,
 "name": &"on",
-"speed": 15.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxtdd"]
@@ -58,8 +46,9 @@ script = ExtResource("1_omw8g")
 position = Vector2(5.96046e-08, -18)
 scale = Vector2(0.0719034, 0.0594219)
 sprite_frames = SubResource("SpriteFrames_e84ex")
-animation = &"off"
+animation = &"on"
 autoplay = "on"
+frame_progress = 0.00929764
 
 [node name="Area2D" type="Area2D" parent="."]
 process_mode = 1
