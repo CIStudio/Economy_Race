@@ -14,10 +14,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if in_object_area == true and presse_mh == true:
 		PRESSE.show()
-		print('1')
 	else:
 		PRESSE.hide()
-		print('2')
 	if in_object_area == true and Input.is_action_just_pressed("take") and not device_turned_off:
 		Global.devices_off += 1
 		device_turned_off = true
