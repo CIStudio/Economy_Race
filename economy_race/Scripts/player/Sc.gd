@@ -27,5 +27,5 @@ func _physics_process(_delta: float) -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * SPEED
 	
-	$Camera/Label.text=str(Global.devices_off)
+	$"../CanvasLayer/Label".text=str(Global.devices_off)
 	move_and_slide()

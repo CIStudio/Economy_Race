@@ -28,3 +28,8 @@ func _on_body_entered(body: Node2D) -> void:
 		in_object_area = true
 	else:
 		in_object_area = false
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.name == "player":
+		in_object_area = false
