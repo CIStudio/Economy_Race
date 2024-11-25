@@ -56,5 +56,6 @@ autostart = true
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Resume" to="Meneger" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Restart" to="Meneger" method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Quit" to="Meneger" method="_on_quit_pressed"]
+[connection signal="timeout" from="Timer" to="Meneger" method="_on_timer_timeout"]
 
 [editable path="CanvasLayer/Pause menu"]
