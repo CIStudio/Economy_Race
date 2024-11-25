@@ -72,3 +72,4 @@ position = Vector2(-1.19209e-06, -32.4375)
 scale = Vector2(0.015625, 0.0217285)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

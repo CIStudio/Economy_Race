@@ -1,8 +1,12 @@
 [gd_scene load_steps=10 format=4 uid="uid://2iqh1l5uvg27"]
 
+[gd_scene load_steps=9 format=4 uid="uid://2iqh1l5uvg27"]
+
+
 [ext_resource type="PackedScene" uid="uid://cdn4an1y4inxr" path="res://Scenes/tilemaps/builder.tscn" id="1_cwnwx"]
 [ext_resource type="PackedScene" uid="uid://bbxpuc56cquka" path="res://Scenes/player/player.tscn" id="1_gqgmq"]
 [ext_resource type="Script" path="res://Scripts/levels/Level_1/meneger.gd" id="1_ou3kj"]
+[ext_resource type="AudioStream" uid="uid://570a82i6nfc1" path="res://Tracks/8-bit-music-on-245249.mp3" id="1_tgu2n"]
 [ext_resource type="PackedScene" uid="uid://dk5hlh34tw337" path="res://Scenes/tilemaps/interios.tscn" id="2_tqagc"]
 [ext_resource type="PackedScene" uid="uid://cdyy27nnuqs82" path="res://Scenes/Devices/lamp.tscn" id="4_bm1dx"]
 [ext_resource type="PackedScene" uid="uid://nxqayiltfvl4" path="res://Scenes/UI/pause_menu.tscn" id="6_xnenn"]
@@ -10,7 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://bsfn1cgxg50fn" path="res://Scenes/Devices/lamp3.tscn" id="8_743f4"]
 [ext_resource type="PackedScene" uid="uid://lsh7ttgtk372" path="res://Scenes/Devices/tv.tscn" id="9_3h6bm"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_j5n5i"]
+shadow_color = Color(0.00784314, 0.0235294, 0, 1)
+
 [node name="level_1" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_tgu2n")
+autoplay = true
 
 [node name="Meneger" type="Node" parent="."]
 process_mode = 3
@@ -32,8 +43,16 @@ position = Vector2(478, 415)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 481.0
+offset_top = 13.0
+offset_right = 545.0
+offset_bottom = 44.0
+label_settings = SubResource("LabelSettings_j5n5i")
+
 [node name="Pause menu" parent="CanvasLayer" instance=ExtResource("6_xnenn")]
 process_mode = 2
+
 
 [node name="Lamp" parent="." instance=ExtResource("7_88vyo")]
 position = Vector2(347, 382)
@@ -68,8 +87,17 @@ position = Vector2(564, 533)
 [node name="Tv2" parent="." instance=ExtResource("9_3h6bm")]
 position = Vector2(166, 538)
 
+[node name="Timer" type="Label" parent="CanvasLayer"]
+offset_right = 104.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Resume" to="Meneger" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Restart" to="Meneger" method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Quit" to="Meneger" method="_on_quit_pressed"]
+[connection signal="timeout" from="Timer" to="Meneger" method="_on_timer_timeout"]
 
 [editable path="CanvasLayer/Pause menu"]
