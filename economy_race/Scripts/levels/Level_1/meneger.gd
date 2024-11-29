@@ -3,28 +3,7 @@ extends Node
 @onready var pause_menu =$"../CanvasLayer/Pause menu"
 var game_paused: bool = false
 
-var seconds = 0
-var Dseconds = 30
-var minutes = 0
-var Dminutes = 1
 
-
-func _ready():
-	Reset_Timer()
-
-func _on_timer_timeout():
-	if seconds == 0:
-		if minutes > 0:
-			minutes -= 1
-			seconds = 60
-	seconds -= 1
-
-	$"../CanvasLayer/Timer".text=str(minutes) + ":" + str(seconds)
-
-func Reset_Timer():
-	seconds = Dseconds
-	minutes = Dminutes
-	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		game_paused = !game_paused

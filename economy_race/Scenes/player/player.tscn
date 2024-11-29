@@ -291,3 +291,7 @@ shape = SubResource("CapsuleShape2D_2ykmx")
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="Label" type="Label" parent="Camera"]
+offset_right = 40.0
+offset_bottom = 23.0
