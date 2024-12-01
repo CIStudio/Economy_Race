@@ -10,7 +10,7 @@ offset_left = 399.0
 offset_top = 147.0
 offset_right = 539.0
 offset_bottom = 194.0
-text = "SKINS"
+text = "SKINSыыыыы"
 
 [node name="menu" type="Button" parent="."]
 offset_left = 220.0
