@@ -1,11 +1,5 @@
+[gd_scene load_steps=12 format=4 uid="uid://2iqh1l5uvg27"]
 
-[gd_scene load_steps=7 format=4 uid="uid://2iqh1l5uvg27"]
-
-[gd_scene load_steps=10 format=4 uid="uid://2iqh1l5uvg27"]
-
-[gd_scene load_steps=9 format=4 uid="uid://2iqh1l5uvg27"]
-
-[gd_scene load_steps=9 format=4 uid="uid://2iqh1l5uvg27"]
 [ext_resource type="PackedScene" uid="uid://cdn4an1y4inxr" path="res://Scenes/tilemaps/builder.tscn" id="1_cwnwx"]
 [ext_resource type="PackedScene" uid="uid://bbxpuc56cquka" path="res://Scenes/player/player.tscn" id="1_gqgmq"]
 [ext_resource type="Script" path="res://Scripts/levels/Level_1/meneger.gd" id="1_ou3kj"]
@@ -56,6 +50,10 @@ label_settings = SubResource("LabelSettings_j5n5i")
 [node name="Pause menu" parent="CanvasLayer" instance=ExtResource("6_xnenn")]
 process_mode = 2
 
+[node name="Timer" type="Label" parent="CanvasLayer"]
+offset_right = 104.0
+offset_bottom = 40.0
+
 [node name="Lamp" parent="." instance=ExtResource("7_88vyo")]
 position = Vector2(347, 382)
 
@@ -88,10 +86,6 @@ position = Vector2(564, 533)
 
 [node name="Tv2" parent="." instance=ExtResource("9_3h6bm")]
 position = Vector2(166, 538)
-
-[node name="Timer" type="Label" parent="CanvasLayer"]
-offset_right = 104.0
-offset_bottom = 40.0
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
