@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bsfn1cgxg50fn" path="res://Scenes/Devices/lamp3.tscn" id="8_maw0y"]
 [ext_resource type="PackedScene" uid="uid://lsh7ttgtk372" path="res://Scenes/Devices/tv.tscn" id="9_w5011"]
 
-[node name="level_1" type="Node2D"]
+[node name="level_2" type="Node2D"]
 
 [node name="Meneger" type="Node" parent="."]
 process_mode = 3
@@ -30,6 +30,13 @@ position = Vector2(321, 629)
 
 [node name="Pause menu" parent="CanvasLayer" instance=ExtResource("6_idcv8")]
 process_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 514.0
+offset_top = 2.0
+offset_right = 575.0
+offset_bottom = 30.0
+horizontal_alignment = 1
 
 [node name="Lamp" parent="." instance=ExtResource("7_21akj")]
 position = Vector2(400, 597)
