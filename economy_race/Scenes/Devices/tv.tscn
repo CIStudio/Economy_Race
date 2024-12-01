@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://lsh7ttgtk372"]
+[gd_scene load_steps=11 format=3 uid="uid://dpy3jdc7td7k0"]
 
 [ext_resource type="Script" path="res://Scenes/devices/lamp.gd" id="1_gu421"]
 [ext_resource type="Texture2D" uid="uid://dfunetygugmti" path="res://Files/Devises/Tv/off.png" id="2_7ajkv"]
@@ -69,3 +69,4 @@ position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_ksbr1")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

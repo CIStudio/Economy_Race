@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwwqps06duv4"]
+[gd_scene load_steps=12 format=3 uid="uid://bbuahjnua3sbt"]
 
 [ext_resource type="Script" path="res://Scenes/devices/lamp.gd" id="1_c0qss"]
 [ext_resource type="Texture2D" uid="uid://cmt07qfxgs4k1" path="res://Files/Devises/Lamp/off.png" id="2_3q5n6"]
@@ -73,3 +73,4 @@ position = Vector2(0, -40)
 scale = Vector2(0.015625, 0.0217285)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
