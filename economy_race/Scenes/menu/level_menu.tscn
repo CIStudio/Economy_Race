@@ -6,39 +6,26 @@
 script = ExtResource("1_escnu")
 
 [node name="level_1" type="Button" parent="."]
-offset_left = 27.0
-offset_top = 104.0
-offset_right = 112.0
-offset_bottom = 140.0
+offset_left = 99.0
+offset_top = 142.0
+offset_right = 184.0
+offset_bottom = 178.0
 text = "1"
 
 [node name="level_2" type="Button" parent="."]
-offset_left = 126.0
-offset_top = 183.0
-offset_right = 211.0
-offset_bottom = 219.0
+offset_left = 248.0
+offset_top = 144.0
+offset_right = 333.0
+offset_bottom = 180.0
 text = "2"
 
-[node name="Button3" type="Button" parent="."]
-offset_left = 253.0
-offset_top = 103.0
-offset_right = 338.0
-offset_bottom = 139.0
+[node name="level_3" type="Button" parent="."]
+offset_left = 405.0
+offset_top = 143.0
+offset_right = 490.0
+offset_bottom = 179.0
 text = "3"
-
-[node name="Button4" type="Button" parent="."]
-offset_left = 362.0
-offset_top = 181.0
-offset_right = 447.0
-offset_bottom = 217.0
-text = "4"
-
-[node name="Button5" type="Button" parent="."]
-offset_left = 472.0
-offset_top = 104.0
-offset_right = 557.0
-offset_bottom = 140.0
-text = "5"
 
 [connection signal="pressed" from="level_1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="level_2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="level_3" to="." method="_on_level_3_pressed"]
