@@ -1,14 +1,15 @@
-[gd_scene load_steps=10 format=4 uid="uid://dql12dthvtqys"]
+[gd_scene load_steps=11 format=4 uid="uid://dql12dthvtqys"]
 
 [ext_resource type="Script" path="res://Scripts/levels/Level_1/meneger.gd" id="1_hvsvb"]
 [ext_resource type="PackedScene" uid="uid://cdn4an1y4inxr" path="res://Scenes/tilemaps/builder.tscn" id="2_h48us"]
 [ext_resource type="PackedScene" uid="uid://dk5hlh34tw337" path="res://Scenes/tilemaps/interios.tscn" id="3_d22y3"]
 [ext_resource type="PackedScene" uid="uid://bbxpuc56cquka" path="res://Scenes/player/player.tscn" id="4_ek4a8"]
 [ext_resource type="PackedScene" uid="uid://nxqayiltfvl4" path="res://Scenes/UI/pause_menu.tscn" id="6_idcv8"]
-[ext_resource type="PackedScene" uid="uid://bwwqps06duv4" path="res://Scenes/Devices/lamp2.tscn" id="7_21akj"]
-[ext_resource type="PackedScene" uid="uid://bsfn1cgxg50fn" path="res://Scenes/Devices/lamp3.tscn" id="8_maw0y"]
+[ext_resource type="PackedScene" uid="uid://qchtek2ht7c7" path="res://Scenes/menu/end_menu.tscn" id="6_t6j0d"]
+[ext_resource type="PackedScene" uid="uid://bbuahjnua3sbt" path="res://Scenes/Devices/lamp2.tscn" id="7_21akj"]
+[ext_resource type="PackedScene" uid="uid://r6bscmbq7yji" path="res://Scenes/Devices/lamp3.tscn" id="8_maw0y"]
 [ext_resource type="AudioStream" uid="uid://dyiv3od1ku5ci" path="res://Tracks/8-bit-retro-game-music-233964.mp3" id="9_s6dfw"]
-[ext_resource type="PackedScene" uid="uid://lsh7ttgtk372" path="res://Scenes/Devices/tv.tscn" id="9_w5011"]
+[ext_resource type="PackedScene" uid="uid://dpy3jdc7td7k0" path="res://Scenes/Devices/tv.tscn" id="9_w5011"]
 
 [node name="level_2" type="Node2D"]
 
@@ -29,15 +30,23 @@ position = Vector2(321, 629)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Pause menu" parent="CanvasLayer" instance=ExtResource("6_idcv8")]
-process_mode = 2
-
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 514.0
 offset_top = 2.0
 offset_right = 575.0
 offset_bottom = 30.0
 horizontal_alignment = 1
+
+[node name="Timer" type="Label" parent="CanvasLayer"]
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 86.0
+offset_bottom = 42.0
+
+[node name="Pause menu" parent="CanvasLayer" instance=ExtResource("6_idcv8")]
+process_mode = 2
+
+[node name="End_Menu" parent="CanvasLayer" instance=ExtResource("6_t6j0d")]
 
 [node name="Lamp" parent="." instance=ExtResource("7_21akj")]
 position = Vector2(400, 597)
@@ -92,5 +101,8 @@ autoplay = true
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Resume" to="Meneger" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Restart" to="Meneger" method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Quit" to="Meneger" method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/End_Menu/Panel/Restart" to="Meneger" method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/End_Menu/Panel/Menu" to="Meneger" method="_on_menu_pressed"]
 
 [editable path="CanvasLayer/Pause menu"]
+[editable path="CanvasLayer/End_Menu"]

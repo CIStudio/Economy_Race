@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://qchtek2ht7c7"]
+
+[node name="End_Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = -235.0
+offset_top = -81.0
+offset_right = 275.0
+offset_bottom = 121.0
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -107.0
+offset_top = 91.0
+offset_right = 107.0
+offset_bottom = 119.0
+grow_horizontal = 2
+
+[node name="Best_Time" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 151.0
+offset_right = 446.0
+offset_bottom = 177.0
+text = "2"
+
+[node name="Time" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 151.0
+offset_right = 122.0
+offset_bottom = 177.0
+text = "1"
+
+[node name="Restart" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 90.0
+offset_right = 120.0
+offset_bottom = 122.0
+text = "Restart"
+
+[node name="Menu" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 89.0
+offset_right = 480.0
+offset_bottom = 122.0
+text = "Menu"

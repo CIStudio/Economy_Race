@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://2iqh1l5uvg27"]
+[gd_scene load_steps=13 format=4 uid="uid://2iqh1l5uvg27"]
 
 [ext_resource type="PackedScene" uid="uid://cdn4an1y4inxr" path="res://Scenes/tilemaps/builder.tscn" id="1_cwnwx"]
 [ext_resource type="PackedScene" uid="uid://bbxpuc56cquka" path="res://Scenes/player/player.tscn" id="1_gqgmq"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cdyy27nnuqs82" path="res://Scenes/Devices/lamp.tscn" id="4_bm1dx"]
 [ext_resource type="PackedScene" uid="uid://nxqayiltfvl4" path="res://Scenes/UI/pause_menu.tscn" id="6_xnenn"]
 [ext_resource type="PackedScene" uid="uid://bbuahjnua3sbt" path="res://Scenes/Devices/lamp2.tscn" id="7_88vyo"]
+[ext_resource type="PackedScene" uid="uid://qchtek2ht7c7" path="res://Scenes/menu/end_menu.tscn" id="7_rfosy"]
 [ext_resource type="PackedScene" uid="uid://r6bscmbq7yji" path="res://Scenes/Devices/lamp3.tscn" id="8_743f4"]
 [ext_resource type="PackedScene" uid="uid://dpy3jdc7td7k0" path="res://Scenes/Devices/tv.tscn" id="9_3h6bm"]
 
@@ -43,12 +44,14 @@ offset_right = 545.0
 offset_bottom = 44.0
 label_settings = SubResource("LabelSettings_j5n5i")
 
-[node name="Pause menu" parent="CanvasLayer" instance=ExtResource("6_xnenn")]
-process_mode = 2
-
 [node name="Timer" type="Label" parent="CanvasLayer"]
 offset_right = 104.0
 offset_bottom = 40.0
+
+[node name="Pause menu" parent="CanvasLayer" instance=ExtResource("6_xnenn")]
+process_mode = 2
+
+[node name="End_Menu" parent="CanvasLayer" instance=ExtResource("7_rfosy")]
 
 [node name="Lamp" parent="." instance=ExtResource("7_88vyo")]
 position = Vector2(347, 382)
@@ -94,6 +97,9 @@ autoplay = true
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Resume" to="Meneger" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Restart" to="Meneger" method="_on_restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Quit" to="Meneger" method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/End_Menu/Panel/Restart" to="Meneger" method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/End_Menu/Panel/Menu" to="Meneger" method="_on_menu_pressed"]
 [connection signal="timeout" from="Timer" to="Meneger" method="_on_timer_timeout"]
 
 [editable path="CanvasLayer/Pause menu"]
+[editable path="CanvasLayer/End_Menu"]
