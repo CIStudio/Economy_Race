@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://rphtyh6k8yq1"]
 
-[ext_resource type="Script" path="res://Scripts/levels/Level_1/meneger.gd" id="1_r0hnl"]
+[ext_resource type="Script" path="res://Scripts/levels/lever_3/meneger_2.gd" id="1_tdyuy"]
 [ext_resource type="PackedScene" uid="uid://cdn4an1y4inxr" path="res://Scenes/tilemaps/builder.tscn" id="2_0jsg5"]
 [ext_resource type="PackedScene" uid="uid://dk5hlh34tw337" path="res://Scenes/tilemaps/interios.tscn" id="3_i4n65"]
 [ext_resource type="PackedScene" uid="uid://bbxpuc56cquka" path="res://Scenes/player/player.tscn" id="4_j5dcj"]
@@ -13,9 +13,8 @@
 
 [node name="level_3" type="Node2D"]
 
-[node name="Meneger" type="Node" parent="."]
-process_mode = 3
-script = ExtResource("1_r0hnl")
+[node name="Meneger_2" type="Node" parent="."]
+script = ExtResource("1_tdyuy")
 
 [node name="Builder" parent="." instance=ExtResource("2_0jsg5")]
 position = Vector2(130, 78)
@@ -89,12 +88,12 @@ autoplay = true
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Resume" to="Meneger" method="_on_resume_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Restart" to="Meneger" method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Quit" to="Meneger" method="_on_quit_pressed"]
-[connection signal="pressed" from="CanvasLayer/End_Menu/Panel/Restart" to="Meneger" method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/End_Menu/Panel/Menu" to="Meneger" method="_on_menu_pressed"]
-[connection signal="timeout" from="Timer" to="Meneger" method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Resume" to="Meneger_2" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Restart" to="Meneger_2" method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause menu/Panel/VBoxContainer/Quit" to="Meneger_2" method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/End_Menu/Panel/Restart" to="Meneger_2" method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/End_Menu/Panel/Menu" to="Meneger_2" method="_on_menu_pressed"]
+[connection signal="timeout" from="Timer" to="Meneger_2" method="_on_timer_timeout"]
 
 [editable path="CanvasLayer/Pause menu"]
 [editable path="CanvasLayer/End_Menu"]

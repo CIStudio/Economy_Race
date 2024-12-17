@@ -6,16 +6,15 @@ var game_paused: bool = false
 var end:bool = false
 
 var seconds = 0
-var Dseconds = 50
+var Dseconds = 45
 var minutes = 0
 var Dminutes = 0
 var time = 0
-
 func _ready():
 	Reset_Timer()
 
 func _on_timer_timeout():
-	if Global.devices_off < 12:
+	if Global.devices_off < 11:
 		if seconds == 0:
 			if minutes > 0:
 				minutes -= 1
@@ -29,13 +28,15 @@ func Reset_Timer():
 	minutes = Dminutes
 	
 func _process(_delta):
-	if Global.devices_off == 12 or (minutes == 0 and seconds == 0):
+	if Global.devices_off == 11 or (minutes == 0 and seconds == 0):
 		$"../AudioStreamPlayer".stop()
 		end = true
 		Global.minutes_time = time / 60
 		Global.seconds_time = time - (Global.minutes_time * 60)
+		
 		if Global.best_time < time:
 			Global.best_time = time
+			
 	if Input.is_action_just_pressed("ui_cancel"):
 		game_paused = !game_paused
 	if game_paused == true:
@@ -49,7 +50,7 @@ func _process(_delta):
 	else:
 		end_menu.hide()
 		
-	$"../CanvasLayer/End_Menu/Panel/Score".text = "Сохранено энергии :" + str(Global.devices_off * 400) + "Вт*ч"
+	$"../CanvasLayer/End_Menu/Panel/Score".text = "Сохранено энергии :" + str(Global.devices_off * 100) + "Вт*ч"
 	$"../CanvasLayer/End_Menu/Panel/Time".text = "Время " + str(Global.minutes_time) + ":" + str(Global.seconds_time)
 	$"../CanvasLayer/End_Menu/Panel/Best_Time".text = "Лучшее время " + str(Global.best_time)
 
